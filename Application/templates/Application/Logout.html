@@ -1,0 +1,29 @@
+<!-- Logout.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'DonutDive.css' %}">
+    <title>Logout - Donut Dive</title>
+</head>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Donut Dive</h1>
+        <p>Your go-to place for delicious donuts!</p>
+    </header>
+<nav>
+    <ul>
+        <li><a href="{% url 'Home' %}">Home</a></li>
+        <li><a href="{% url 'Contacts' %}">Contacts</a></li>
+        <li><a href="{% url 'Calendar' %}">Calendar</a></li>
+        <li><a href="{% url 'Login' %}">Login</a></li>
+        <li><a href="{% url 'Signup' %}">Signup</a></li>
+        <li><a href="{% url 'Logout' %}">Logout</a></li>
+        <li><a href="{% url 'Weekly_reward' %}">Rewards</a></li>
+        <li id="loginStatus"></li>
+    </ul>
+</nav>

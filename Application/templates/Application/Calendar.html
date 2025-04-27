@@ -1,0 +1,95 @@
+<!-- Calender.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Scripts -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/DonutDive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css"crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"crossorigin="anonymous"></script>
+    <title>Calendar - Donut Dive</title>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Donut Dive</h1>
+        <p>Your go-to place for delicious donuts!</p>
+    </header>
+
+    {% if user.is_authenticated %}
+    <nav>
+        <ul>
+            <li><a href="{% url 'Home' %}">Home</a></li>
+            <li><a href="{% url 'Contacts' %}">Contacts</a></li>
+            <li><a href="{% url 'Calendar' %}">Calendar</a></li>
+            <li><a href="{% url 'Logout' %}">Logout</a></li>
+            <li><a href="{% url 'Weekly_reward' %}">Rewards</a></li>
+            <strong>Hello {{ fname }} </strong>
+            <li id="loginStatus"></li>
+        </ul>
+    </nav>
+    {% else %}
+    <nav>
+        <ul>
+            <li><a href="{% url 'Home' %}">Home</a></li>
+            <li><a href="{% url 'Contacts' %}">Contacts</a></li>
+            <li><a href="{% url 'Calendar' %}">Calendar</a></li>
+            <li><a href="{% url 'Login' %}">Login</a></li>
+            <li><a href="{% url 'Signup' %}">Signup</a></li>
+            <li id="loginStatus"></li>
+        </ul>
+    </nav>
+    
+{% endif %}
+
+    <section id="calendar">
+        <h2>Event Calendar</h2>
+        <div id="fullCalendar"></div>
+    </section>
+
+
+
+<!-- jQuery script tag -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"crossorigin="anonymous"></script>
+
+<!-- Other scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"crossorigin="anonymous"></script>
+
+<!-- Your script -->
+<script>
+        $(document).ready(function () {
+            // Wrap the FullCalendar initialization in a try-catch block
+            try {
+                $('#fullCalendar').fullCalendar({
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,agendaWeek,agendaDay'
+                    },
+                    events: [
+                        {
+                            title: 'Fireman Parade',
+                            start: '2025-5-2'
+                        },
+                        {
+                            title: 'Apple Blossom Festival Parade',
+                            start: '2025-5-3'
+                        },
+                        
+                    ]
+                });
+            } catch (error) {
+                console.error('FullCalendar initialization error:', error);
+            }
+        });
+    </script>
+</body>
+
+</html>

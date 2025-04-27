@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'DonutDive.css' %}">
+    <title>Weekly Reward - Donut Dive</title>
+</head>
+
+<body>
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>Message:</strong> {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="close">
+    </button>
+    </div>
+    {% endfor %}
+
+    <header>
+        <h1>Welcome to Donut Dive</h1>
+        <p>Your go-to place for delicious donuts!</p>
+    </header>
+
+    {% if user.is_authenticated %}
+    <nav>
+        <ul>
+            <li><a href="{% url 'Home' %}">Home</a></li>
+            <li><a href="{% url 'Contacts' %}">Contacts</a></li>
+            <li><a href="{% url 'Calendar' %}">Calendar</a></li>
+            <li><a href="{% url 'Logout' %}">Logout</a></li>
+            <li><a href="{% url 'Weekly_reward' %}">Rewards</a></li>
+            <strong>Hello {{ fname }} </strong>
+            <li id="loginStatus"></li>
+        </ul>
+    </nav>
+    {% else %}
+    <nav>
+        <ul>
+            <li><a href="{% url 'Home' %}">Home</a></li>
+            <li><a href="{% url 'Contacts' %}">Contacts</a></li>
+            <li><a href="{% url 'Calendar' %}">Calendar</a></li>
+            <li><a href="{% url 'Login' %}">Login</a></li>
+            <li><a href="{% url 'Signup' %}">Signup</a></li>
+            <li id="loginStatus"></li>
+        </ul>
+    </nav>
+    {% endif %}
+
+    <section id="rewardSection">
+        <h2>Weekly Reward</h2>
+        <p>{{ reward_message }}</p>
+        <form action="{% url 'Weekly_reward' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Claim Weekly Reward</button>
+        </form>
+    </section>
+
+</body>
+
+</html>

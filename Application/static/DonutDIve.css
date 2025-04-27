@@ -1,0 +1,136 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ff1493; /* Deep Pink */
+    color: #ffffff; /* White */
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background-color: #333; /* Dark gray */
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+section {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+}
+
+.menu-item {
+    width: 300px; 
+    text-align: center; 
+    border: 2px solid #000000; 
+    background-color: #ff1493; 
+    padding: 10px; 
+    margin-bottom: 20px; 
+}
+
+.menu-item h3 {
+    margin-bottom: 10px;
+}
+
+.menu-item img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+.menu-item p {
+    font-size: 14px;
+    margin-top: 10px; 
+}
+
+.menu-image {
+    border: 2px solid #ff1493; 
+    background-color: #ff1493; 
+    padding: 10px; 
+    margin-bottom: 20px; 
+    text-align: center; 
+    width: 300px; 
+}
+
+.menu-title {
+    background-color: black;
+    border: 2px solid #ff1493; 
+    color: #ff1493; 
+    padding: 10px;
+    margin: 20px 0; 
+    text-align: center; 
+    width: 300px;
+    padding-top: 20px;
+    margin-top: 0px;
+}
+
+.menu-description {
+    background-color: black;
+    border: 2px solid #ff1493;
+    color: #ff1493; 
+    padding: 10px;
+    margin: 20px 0; 
+    text-align: center; 
+    width: 300px;
+    padding-top: 20px;
+    margin-top: 0px;
+    margin-left: 748px;
+}
+
+#calendar {
+    text-align: center;
+    padding: 20px;
+}
+
+#fullCalendar {
+    margin: 20px auto; /* Center the calendar */
+    max-width: 800px; /* Limit the width of the calendar */
+}
+
+#menu {
+    text-align: center;
+}
+
+.fc-content {
+    white-space: normal; /* Allow event titles to wrap */
+}
+
+.fc-event {
+    margin-bottom: 5px; /* Add space between events */
+}
