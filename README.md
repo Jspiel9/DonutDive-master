@@ -3,8 +3,6 @@ Website created with Django for a school project, old user auth key and email th
 
 To run a server in Django, you need to follow a few steps to set up your environment, create a project, and start the development server. Here is a step-by-step guide:
 
-Setting Up the Environment
-
 Create a Virtual Environment: 
 
 It is recommended to use a virtual environment to manage dependencies for your Django project. Run the following command to create a virtual environment: python3 -m venv venv
